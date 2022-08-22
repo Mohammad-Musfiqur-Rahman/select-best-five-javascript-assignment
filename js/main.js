@@ -2,7 +2,7 @@
 const playerArr = [];
 
 function displayPlayer(arr){
-
+// Display Player in Table
 const tableDisplay = document.getElementById('table-display');
     tableDisplay.innerHTML = '';
 
@@ -23,19 +23,14 @@ const tableDisplay = document.getElementById('table-display');
     return totalPlayerNum;
 
 }
-// console.log(displayPlayer());
 
+// Select Player
 function playerSelect(element){
-    // console.log(element.parentNode.parentNode.childNodes[1].innerText) 
-
-    const playerNamer = element.parentNode.parentNode.childNodes[1].innerText;
-     
+    const playerNamer = element.parentNode.parentNode.childNodes[1].innerText;     
     const playerObj = {
         playerNamer: playerNamer
     }
-    playerArr.push(playerObj);    
-    
-    // document.getElementById('count').innerText = playerArr.length;
+    playerArr.push(playerObj);
     displayPlayer(playerArr);
-    // console.log(playerArr);
+    
 }
