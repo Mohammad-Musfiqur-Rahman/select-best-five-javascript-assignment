@@ -20,7 +20,11 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     
     const perPlayerNumber = getInputValue('per-player-input');
 
-    const sum = perPlayerNumber * 4;
+    const expenses = document.getElementById('count');
+    const expensesString = expenses.innerText;
+    const expensesCost = parseInt(expensesString);
+
+    const sum = perPlayerNumber * expensesCost;
 
     const expensesText = getTextSet('player-expenses-text', sum);
     return expensesText;
@@ -29,13 +33,13 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
 document.getElementById('total-btn').addEventListener('click', function(){
     const managerCost = getInputValue('manager-input');
     const coachCost = getInputValue('coach-input');
-    const expensesCost = parseInt(expensesText);
+
+    const expenses = document.getElementById('player-expenses-text');
+    const expensesString = expenses.innerText;
+    const expensesCost = parseInt(expensesString);
 
     const totalCost = expensesCost + managerCost + coachCost;
 
     getTextSet('total-text', totalCost);
 
-
-
-    console.log(expensesCost)
 })
